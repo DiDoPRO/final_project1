@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>All Borrowed Tables</h1>
+
+    {% if tableinstance_list %}
+    <ul>
+
+      {% for tableinst in tableinstance_list %} 
+      <li class="{% if tableinst.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'table-detail' tableinst.table.pk %}">{{tableinst.table.number}}</a> ({{ tableinst.due_back }}) {% if user.is_staff %}- {{ tableinst.borrower }}{% endif %} {% if perms.catalog.can_mark_returned %}- <a href="{% url 'renew-table-restoran' tableinst.id %}">Renew</a>  {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no tables borrowed.</p>
+    {% endif %}       
+{% endblock %}

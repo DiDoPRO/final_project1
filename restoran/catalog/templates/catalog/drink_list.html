@@ -1,0 +1,70 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Bar</h1>
+  <style>
+    body{
+       background-image: url('https://www.quay.com.au/wp-content/uploads/2018/07/Banner-Image-6.jpg');
+      background-repeat: no-repeat;
+      image 
+}
+</style>
+<style>
+    h1 {
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: 'William', sans-serif;
+  margin-bottom: 0;
+  margin-top:0;
+  padding-top: 35x;
+  color: white; 
+}
+</style>
+<ul class="dotted">
+  <p>Cold Drinks</p>
+  <li><span>Coca Cola</span><span>590 tg</span></li>
+  <li><span>Sprite</span><span>590 tg</span></li>
+  <li><span>Fanta</span><span>590 tg</span></li>
+  <li><span>Pepsi</span><span>590 tg</span></li>
+
+  <p>Hot Drinks</p>
+  <li><span>Berry tea</span><span>1000 tg</span></li>
+ <li><span>Americano</span><span>700 tg</span></li>
+  <li><span>Latte</span><span>900 tg</span></li>
+  <li><span>Raf</span><span>900 tg</span></li>
+  <li><span>Cappuccino</span><span>1000 tg</span></li>
+</ul>
+<style>
+  .dotted {
+list-style: none;
+font-family: 'Marck Script', cursive;
+}
+.dotted li {
+margin-bottom: 5px;
+border-bottom: 2px #404B51 dotted;
+font-size: 26px;
+line-height: 1;
+}
+.dotted li span:nth-child(odd) {
+padding-right: 6px; 
+color: #35D1CE;
+}
+.dotted li span:nth-child(even) {
+float: right; 
+padding-left: 6px;
+color: #35D1CE;
+}
+.dotted span {
+background: transparent;
+position: relative;
+bottom: -7px;
+}
+p {
+  color: #35D1CE;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+{% endblock %}

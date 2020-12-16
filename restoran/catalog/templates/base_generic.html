@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  {% block title %}<title>Welcome to Euphoria</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Добавление дополнительного статического CSS файла --> 
+<nav class="navigation">
+  <ul>
+    <li><a href="{% url 'index' %}">Euphoria</a></li><!--
+    --><li><a href="{% url 'foods' %}">Kitchen</a></li><!--
+    --><li><a href="{% url 'drinks' %}">Bar</a></li><!--
+    --><li><a href="{% url 'tables' %}">Reserve</a></li>
+
+  </ul>
+</nav>
+<style>
+.navigation li {
+  display: inline-block;
+    font-family: 'William', Brush Script MT, Brush Script Std, cursive;
+}
+.navigation a {
+  background: #395870;
+  background: transparent;
+  border-right: 1px solid rgba(0, 0, 0, .3);
+  color: #fff;
+  padding: 18px 30px;
+  text-decoration: none;
+  font-size: 30px;
+  text-align: center;
+}
+.navigation a:hover {
+  background: transparent;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
+}
+.navigation li:first-child a {
+  border-radius: 4px 0 0 4px;
+}
+.navigation li:last-child a {
+  border-right: 0;
+  border-radius: 0 4px 4px 0;
+}
+</style>
+</body>
+<body>
+  <div class="loader-wrapper">
+<span class="loader"><span class="loader-inner"></span></span>
+</div>
+<script>
+  $(window).on("load",function(){
+     $(".loader-wrapper").fadeOut("slow");
+});
+</script>
+</body>
+<style type="text/css">
+  body {
+  margin: 0;
+  padding: 0;
+  width:100vw;
+  height: 100vh;
+  background-color: #eee;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+}
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 3s infinite ease;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 3s infinite ease-in;
+}
+@keyframes loader {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(180deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(360deg);}
+  100% { transform: rotate(360deg);}
+}
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%;}
+}
+</style>
+
+      <div class="col-sm-10 ">
+      {% block content %}{% endblock %}
+         {% block pagination %}
+           {% if is_paginated %}
+            <div class="pagination">
+             <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+             </span>
+            </div>
+           {% endif %}
+          {% endblock %} 
+      </div>
+    </div>
+
+  </div> 
+</body>
+</html>

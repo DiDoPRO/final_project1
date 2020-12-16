@@ -1,0 +1,57 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1></h1>
+ <style>
+body {
+  background-image: url('https://marketkitchen.com/files/015d27e2a7a034ef84312c9e677d36b6_full_size.jpg');
+  background-repeat: no-repeat;
+}
+</style>
+<ul class="dotted">
+  <p>Dlya smerthnyh</p>
+  <li><span>Table 1(4 people)</span><span>2000 tg/hour</span></li>
+  <li><span>Table 2(4 people)</span><span>2000 tg/hour</span></li>
+  <li><span>Table 3(6 people)</span><span>2500 tg/hour</span></li>
+  <li><span>Table 4(6 people)</span><span>2500 tg/hour</span></li>
+  <li><span>Table 5(10 people)</span><span>3000 tg/hour</span></li>
+ <li><span>Table 6(10 peolpe)</span><span>3000 tg/hour</span></li>
+  <p>VIP</p>
+  <li><span>Room 1</span><span>5000 tg/hour</span></li>
+  <li><span>Room2</span><span>5000 tg/hour</span></li>
+  <li><span>Room3</span><span>5000 tg/hour</span></li>
+</ul>
+<style>
+  .dotted {
+list-style: none;
+font-family: 'Marck Script', cursive;
+}
+.dotted li {
+margin-bottom: 5px;
+border-bottom: 2px white dotted;
+font-size: 30px;
+line-height: 1;
+}
+.dotted li span:nth-child(odd) {
+padding-right: 6px; 
+color: white;
+}
+.dotted li span:nth-child(even) {
+float: right; 
+padding-left: 6px;
+color: white;
+}
+.dotted span {
+background: transparent;
+position: relative;
+bottom: -7px;
+}
+p {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+      
+{% endblock %}
+

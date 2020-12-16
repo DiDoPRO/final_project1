@@ -1,0 +1,52 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+<style>
+body {
+  background-image: url('https://realfood.tesco.com/media/images/1400x919-SpaghettiCarbonara-557b6ff5-c4f3-4565-ae8e-a506f7dcc415-0-1400x919.jpg');
+  background-repeat: no-repeat;
+}
+</style>
+<style type="text/css">
+   .space { 
+    padding: 50px; /* Поля */
+    background: transparent; /* Цвет фона */
+    border: 2px solid transparent; /* Параметры рамки */
+    width: 900px;
+    margin: 200px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+   }
+  </style>
+ </head>
+<body>
+  <div class="space">
+    <h2>Summary</h2>
+    <h3></h3>
+      <h4>Name: {{ food.name }}</h4>
+<p><strong></strong>{{ food.summary }}</p> 
+  </div>
+ </body>
+
+<style>
+	p{
+   color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'William', Brush Script Std;
+}
+ h4{
+  font-size: 30px;
+  text-transform: none;
+  font-style: italic;
+  font-family: 'William', sans-serif;
+  margin-bottom: 0;
+  margin-top:0;
+  padding-top: 35x;
+  color: white; 
+ }
+  </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Menu</h1>
+<style>
+body {
+  background-image: url('https://www.quay.com.au/wp-content/uploads/2019/07/Marron-and-Flowers.jpg');
+  background-repeat: no-repeat;
+}
+</style>
+      <style>
+    h1 {
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: 'William', sans-serif;
+  margin-bottom: 0;
+  margin-top:0;
+  padding-top: 35x;
+  color: #FFCFF1; 
+}
+</style>
+<ul class="dotted">
+<p>Pasta</p> 
+
+{% for food in food_list %}
+      <li>
+        <a href="{{ food.get_absolute_url }}">{{ food.name }}</a><span>1890tg</span>
+      </li>
+    {% endfor %}
+
+<li><span>Pasta with anchovies</span><span>2100 tg</span></li>
+<li><span>Amatrice spaghetti</span><span>2100 tg</span></li>
+<li><span>Fresh tomato & basil sauce (Pomarola)</span><span>2200 tg</span></li>
+
+<p>Snacks</p>
+<li><span>Potato fries</span><span>499 tg</span></li>
+<li><span>Cracker nuts</span><span>501 tg</span></li>
+<li><span>Bitter ballen</span><span>600 tg</span></li>
+<li><span>Patato chips</span><span>599 tg</span></li>
+
+<p>Salads</p>
+<li><span>Arab salad</span><span>1200 tg</span></li>
+<li><span>Chef salad</span><span>1500 tg</span></li>
+<li><span>Chicken salad</span><span>1700 tg</span></li>
+
+<p>Fast-food</p>
+<li><span>Burger</span><span>1900 tg</span></li>
+<li><span>Pizza</span><span>1900 tg</span></li>
+<li><span>Chicken nuggets</span><span>1200 tg</span></li>  
+</ul>
+<style>
+  .dotted {
+list-style: none;
+font-family: 'Marck Script', cursive;
+}
+.dotted li {
+margin-bottom: 5px;
+border-bottom: 2px #404B51 dotted;
+font-size: 26px;
+line-height: 1;
+}
+.dotted li span:nth-child(odd) {
+padding-right: 6px; 
+color: #436CB9;
+}
+.dotted li span:nth-child(even) {
+float: right; 
+padding-left: 6px;
+color: #436CB9;
+}
+.dotted span {
+background: transparent;
+position: relative;
+bottom: -7px;
+}
+p {
+  color: #C53151;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'William', Brush Script Std;
+}
+</style>
+      
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Table {{ table.number }}</h1>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Frees</h4>
+
+    {% for free in table.tableinstance_set.all %}
+      <hr>
+      <p class="{% if free.status == 'a' %}text-success{% elif free.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
+        {{ free.get_status_display }}
+      </p>
+      {% endfor free.status != 'a' %}
+        <p><strong>Due to be returned</strong> {{ free.due_back }}</p>
+  </div>
+{% endblock %}`
